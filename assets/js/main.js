@@ -3,19 +3,35 @@ function GeneraPrezzo(){
     let ValueKm = parseInt(document.getElementById('Km').value);
     let ValueAgeUp = document.getElementById('AgeUp').value;
     let ValueAgeDown = document.getElementById('AgeDown').value;
+    let ValueOver = document.getElementById('Over65').value;
     let RandomLittle = Math.floor(Math.random() * 10) +1;
     let RandomBig = Math.floor(Math.random() * 89999) +1;
-    
+
+    document.getElementById('NameSurname').innerHTML = ValueNameSurname;
+    document.getElementById('Km').innerHTML = ValueKm;
+    document.getElementById('CodiceCp').innerHTML = RandomBig;
+    document.getElementById('RandomCarrozza').innerHTML = RandomLittle;
     
 
 
     // Discount //
-    
+
     let TicketPrice = 0.21 * ValueKm;
     let Discount20 = (TicketPrice * 0.8).toFixed(2);
     let Discount40 = (TicketPrice * 0.6).toFixed(2);
-    
-    
-    
-    
+
+    if (ValueAgeDown === ValueAgeDown) {
+        document.getElementById('FinalPrice').innerHTML = Discount20;
+
+    }   else if (ValueOver === ValueOver) {
+        document.getElementById('FinalPrice').innerHTML = Discount40;
+
+    }   else {
+        document.getElementById('FinalPrice').innerHTML = TicketPrice;
+    }
 }
+    
+
+
+
+    
