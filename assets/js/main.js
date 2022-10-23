@@ -1,9 +1,7 @@
 function GeneraPrezzo(){
     let ValueNameSurname = document.getElementById('NameSurname').value;
     let ValueKm = parseInt(document.getElementById('Km').value);
-    let ValueAgeUp = document.getElementById('AgeUp').value;
-    let ValueAgeDown = document.getElementById('AgeDown').value;
-    let ValueOver = document.getElementById('Over65').value;
+    let ValueAge = document.getElementById('InputAge').value;
     let RandomLittle = Math.floor(Math.random() * 10) +1;
     let RandomBig = Math.floor(Math.random() * 89999) +1;
 
@@ -20,15 +18,17 @@ function GeneraPrezzo(){
     let Discount20 = (TicketPrice * 0.8).toFixed(2);
     let Discount40 = (TicketPrice * 0.6).toFixed(2);
 
-    if (ValueAgeDown === ValueAgeDown) {
-        document.getElementById('FinalPrice').innerHTML = Discount20;
 
-    }   else if (ValueOver === ValueOver) {
-        document.getElementById('FinalPrice').innerHTML = Discount40;
+    if (ValueAge == "minorenne") {
+        document.getElementById("FinalPrice").innerHTML = Discount20 + "€";
 
-    }   else {
-        document.getElementById('FinalPrice').innerHTML = TicketPrice;
+    } else if (ValueAge == "over65") {
+        document.getElementById("FinalPrice").innerHTML = Discount40 + "€";
+
+    } else {
+        document.getElementById("FinalPrice").innerHTML = TicketPrice + "€";
     }
+
 }
     
 
