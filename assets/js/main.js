@@ -18,6 +18,8 @@ function GeneraPrezzo(){
     let Discount20 = (TicketPrice * 0.8).toFixed(2);
     let Discount40 = (TicketPrice * 0.6).toFixed(2);
 
+    // Condizionale //
+
 
     if (ValueAge == "minorenne") {
         document.getElementById("FinalPrice").innerHTML = Discount20 + "€";
